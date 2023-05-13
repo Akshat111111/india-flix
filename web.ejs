@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Netflix</title>
+  <link href="css/style.css" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script>
+    $(document).ready(function() {
+      var tabs = $('#features > nav a');
+      var tabsContent = $('#features > article > section');
+      tabs.click(function(e) {
+        e.preventDefault();
+        var me = $(this);
+        tabs.removeClass('is-selected');
+        me.addClass('is-selected');
+        tabsContent.removeClass('is-selected');
+        tabsContent
+          .filter((i, tab) => $(tab).data('id') === me.data('id'))
+          .addClass('is-selected');
+      });
+    });
+  </script>
+</head>
+<body>
+  <header>
+    <!-- Header code here -->
+  </header>
+
+  <div id="features">
+    <nav>
+      <a href="#" data-id="cancelanytime" class="column is-selected">
+        <img alt="Cancel anytime" src="img/icons/cancel.svg"/>
+        <h2>Free Cancellation<br/></h2>
+      </a>
+
+      <a href="#" data-id="watchanywhere" class="column">
+        <img alt="Watch anywhere" src="img/icons/watchanywhere.svg"/>
+        <h2>Watch anywhere</h2>
+      </a>
+
+      <a href="#" data-id="pickprice" class="column">
+        <img alt="Pick your price" src="img/icons/pickprice.svg"/>
+        <h2>Pick your price</h2>
+      </a>
+    </nav>
+
+    <article>
+      <section class="center size-70 is-selected" data-id="cancelanytime">
+        <div class="columns">
+          <div class="column">
+            <h2>If you decide Netflix isn't for you - no problem. No commitment. Cancel online anytime.</h2>
+            <button class="btn btn-large">JOIN FOR A FREE MONTH</button>
+          </div>
+          <div class="column">
+            <img src="img/cancelanytime_withdevice.png"/>
+          </div>
+        </div>
+      </section>
+
+      <section class="center size-80" id="watchanywhere" data-id="watchanywhere">
+        <div class="columns">
+          <h2 class="column">Watch TV shows and movies anytime, anywhere — personalized for you.</h2>
+          <button class="btn btn-large column is-narrow">JOIN FOR A FREE MONTH</button>
+        </div>
+
+        <div class="columns size-90 center">
+          <div class="column text-center">
+            <img src="img/asset_TV_UI.png"/>
+            <h3>Watch on your TV</h3>
+            <p>Smart TVs, PlayStation, Xbox, Chromecast, Apple TV, Blu-ray players and more.</p>
+          </div>
+
+          <div class="column text-center">
+            <img src="img/asset_mobile_tablet_UI_2.png"/>
+            <h3>Watch instantly or download for later</h3>
+            <p>Available on phone and tablet, wherever you go.</
+
+
+      </section>
+
+      <section class="center size-70" id="pickprice" data-id="pickprice">
+        <div class="columns">
+          <div class="column">
+            <h2>Choose one plan and watch everything on Netflix.</h2>
+            <ul>
+              <li>Basic Plan: $9.99 per month</li>
+              <li>Standard Plan: $13.99 per month</li>
+              <li>Premium Plan: $16.99 per month</li>
+            </ul>
+            <button class="btn btn-large">JOIN FOR A FREE MONTH</button>
+          </div>
+          <div class="column">
+            <img src="img/pickprice_devices.png"/>
+          </div>
+        </div>
+      </section>
+    </article>
+  </div>
+
+  <footer>
+    <!-- Footer code here -->
+  </footer>
+</body>
+</html>
